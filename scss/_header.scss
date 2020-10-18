@@ -1,0 +1,30 @@
+/* header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+
+  padding-top: 5px;
+
+  &__menu-list {
+    display: flex;
+    padding-bottom: 10px;
+  }
+
+
+  &__menu-link:not(:first-child) {
+    margin-left: 85px;
+  }
+
+  &__menu-link:hover {
+    font-weight: 700;
+    color: $accent-color;
+
+  }
+
+}
+
+
+
