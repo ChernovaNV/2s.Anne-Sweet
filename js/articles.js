@@ -54,6 +54,8 @@ commentsForm.onsubmit = function (evt) {
   commentsList.append(newComment);
 };
 
+/* Warning */
+
 commentText.oninput = function () {
 
   if (commentText.value.length < 20 || commentText.value.length > 200) {
@@ -64,3 +66,20 @@ commentText.oninput = function () {
     submitButton.disabled = false;
   }
 };
+
+
+/* Not return sign for input in form if entered though 1 symbol*/
+
+const commentInput = document.querySelectorAll('.comments__input');
+
+commentInput.forEach((input) => {
+  input.oninput = function () {
+    let inputNode = input.nextElementSibling;
+
+    if (input.value.length > 0) {
+      inputNode.classList.add('comments__input--entered');
+    } else {
+      inputNode.classList.remove('comments__input--entered');
+    }
+  }
+})
